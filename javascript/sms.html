@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>API TotalVoice</title>
+        <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+		<script src="http://ajax.cdnjs.com/ajax/libs/json2/20110223/json2.js"></script>
+
+		
+		<script>
+
+var rootURL = 'https://api.totalvoice.com.br';
+var accessToken='222555dddftre54ss988892h34721'; //coloque seu access_token aqui
+
+
+$.ajaxSetup({
+    headers: { 'Access-Token': accessToken}
+});
+
+
+
+function getSMS(id) {
+    $.ajax({
+        type: 'GET',
+        url: rootURL + '/sms/' + id,
+        dataType: "json",
+        success: function(data){
+            renderDetails(data);
+        }
+    });
+}
+ 
+function postSMS(numero_destino, mensagem) {
+    console.log('postSMS');
+	var resposta_usuario = true;
+    $.ajax({
+        type: 'POST',
+		dataType: "json",
+		data: formToJSON(numero_destino, mensagem, resposta_usuario),
+        url: rootURL + '/sms',
+        success: function(data, textStatus, jqXHR){
+            renderDetails(data);
+        },
+        error: function(jqXHR, textStatus, errorThrown){
+            alert('error: ' + textStatus);
+        }
+    });
+}
+
+
+function formToJSON(numero_destino, mensagem, resposta_usuario){
+	return JSON.stringify({ "numero_destino": numero_destino, "mensagem": mensagem, "resposta_usuario": resposta_usuario} ) ;
+}
+
+function renderDetails(chamada) {
+	$('#status').text(chamada.status);
+	$('#sucesso').text(chamada.sucesso);
+	$('#motivo').text(chamada.motivo);
+	$('#mensagem_r').text(chamada.mensagem);
+	$('#dadosid').text(chamada.dados.id);
+}
+
+
+
+
+//relatorio de sms enviado
+function getSMSRelatorio(data_inicio, data_fim) {
+    $.ajax({
+        type: 'GET',
+        url: rootURL + '/sms/relatorio/',
+        dataType: "json",
+		data: {
+			data_inicio: data_inicio,
+			data_fim: data_fim
+
+		},
+
+        success: function(data, textStatus, jqXHR){
+			console.log( JSON.stringify(data) );
+			alert(JSON.stringify(data));
+        },
+        error: function(jqXHR, textStatus, errorThrown){
+            alert('error: ' + textStatus);
+        }
+    });
+}
+
+
+
+
+//mostra saldo
+function getSaldo() {
+    $.ajax({
+        type: 'GET',
+        url: rootURL + '/saldo/',
+        dataType: "json",
+        success: function(data){
+            renderSaldo(data.dados);
+        }
+    });
+}
+
+function renderSaldo(dados) {
+	$('#saldo').text(dados.saldo);
+}
+
+getSaldo();
+		</script>
+    </head>
+    <body>
+
+
+
+		<div class="header">
+			id:<input type="text" id="searchKey"/>
+			<button id="btnSearch">Buscar SMS</button>
+		</div>
+
+
+        <div>
+            <p id="status"> </p>
+            <p id="sucesso"> </p>
+			<p id="motivo"> </p>
+			<p id="mensagem_r"> </p>
+			<p id="dadosid"> </p>
+        </div>
+
+
+
+
+<script>
+$('#btnSearch').click(function() {
+	getSMS($('#searchKey').val());
+	return false;
+});
+
+</script>
+
+
+
+<br><br>
+		<div class="header">
+			Telefone: <input type="text" id="numero_destino" value="11996734645"/><br>
+			Mensagem: <input type="text" id="mensagem" value="oi, mensagem de teste"/><br>
+			<button id="btnCall">Enviar SMS</button>
+		</div>
+<hr>
+<br><br>
+Saldo: 
+        <div>
+            <p id="saldo"> </p>
+        </div>
+
+
+<hr>
+<br><br>
+
+		<div class="">
+			Data inicio: <input type="text" id="data_inicio" value="2017-04-01"/><br>
+			Data fim: <input type="text" id="data_fim" value="2017-04-26"/><br>
+			<button id="btnReport">Relatório SMS</button>
+		</div>
+<hr>
+
+
+
+
+
+
+
+
+
+<script>
+$('#btnCall').click(function() {
+	postSMS($('#numero_destino').val(),$('#mensagem').val());
+	return false;
+});
+
+
+$('#btnReport').click(function() {
+	getSMSRelatorio($('#data_inicio').val(),$('#data_fim').val());
+	return false;
+});
+
+</script>
+    </body>
+</html>
