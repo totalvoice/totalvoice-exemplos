@@ -1,5 +1,6 @@
 <?php
 /** 
+ * PHP +5.4
  * Primeiramente: considero que você já instalou a nossa lib com o Composer
  * Nesse exemplo: SUBSTITUA a string 'seu-access-token' pelo token que tem no seu painel...
  * 
