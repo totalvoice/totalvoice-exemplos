@@ -1,4 +1,7 @@
 /**
+ * Primeiramente, estamos utilizando a lib da TotalVoice para executar o script
+ * Você precisa ter o Maven pra instalar a biblioteca pelo gerenciador de dependências
+ * 
  * Vamos simular o seguinte cenário....
  * 4 Ramais -
  * Um deles (4101) será a URA de atendimento
