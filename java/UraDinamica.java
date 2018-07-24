@@ -73,7 +73,7 @@ public class Teste {
     {
         try {
 
-            /** Versão da lib utilizada 1.0.4 */
+            /** Versão da lib utilizada 1.0.6 */
             // TROQUE PELO SEU ACCESS-TOKEN
             TotalVoiceClient client = new TotalVoiceClient("access-token");
             Central central = new Central(client);
@@ -116,7 +116,7 @@ public class Teste {
              * Nesse trecho enviaremos um JSON seguindo o modelo:
              *
              * {
-             *   "nome": "URA RODOSAFRA",
+             *   "nome": "TESTE DE URA",
              *   "dados": [
              *     {
              *       "acao": "tts",
