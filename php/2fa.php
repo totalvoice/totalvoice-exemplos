@@ -5,7 +5,7 @@
  * http://www.totalvoice.com.br/blog/2-factor-authentication-2fa-com-a-totalvoice/
  * 
  * Com a nossa lib você consegue enviar tanto para um telefone fixo, quanto para um móvel - celular
- * Você consegue enviar um TTS (Text to Speech) ou um SMS
+ * Você consegue enviar um TTS (Text to Speech - telefone fixo) ou um SMS (telefone movel)
  *  - TTS: o usuário irá receber um ligação que irá informar o código de verificação por meio de voz
  *  - SMS: o usuário irá recener uma mensagem de texto no seu celular com o código de verificação
  */
