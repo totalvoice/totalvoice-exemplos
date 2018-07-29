@@ -78,6 +78,7 @@ public class Teste {
             TotalVoiceClient client = new TotalVoiceClient("access-token");
             Central central = new Central(client);
 
+            // IMPORTANTE: ALTERE OS E-MAILS E SENHA QUE ESTAO NESTE EXEMPLO PARA SEGURANCA - ESTES SAO APENAS DE EXEMPLO
             System.out.println("Criando ramal 1");
             JSONObject ramal1 = new JSONObject();
             ramal1.put("ramal", 4101);
