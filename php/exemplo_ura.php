@@ -69,6 +69,7 @@ $client = new TotalVoiceClient('seu-access-token');
 // ################################################################
 // ################################################################
 // 1º passo vamos criar os 3 ramais
+// IMPORTANTE: ALTERE OS E-MAILS E SENHA QUE ESTAO NESTE EXEMPLO PARA SEGURANCA - ESTES SAO APENAS DE EXEMPLO
 $ramal1 = [
     'ramal' => 4101,
     'login' => 'e1@empresa.com.br', // será o login do Ramal para acessar o painel
