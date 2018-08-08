@@ -1,0 +1,28 @@
+<ion-modal-view>
+  <ion-content class="padding displayCall">
+    
+    <ion-item class="item-divider contItem" no-lines>
+      <b class="callnome">{{anotherName}}</b>
+      <span>{{statusCalling}}</span>
+    </ion-item >
+    
+    <ion-avatar>
+      <img class="user-image imageCall" src="{{anotherAvatar}}" />
+    </ion-avatar>
+
+    <button class="fab-close" ng-click="turnOFFCall()">
+      <ion-icon name="close"></ion-icon>
+    </button>
+
+    <button class="optCall" ng-click="onOffMic()">
+      <span ng-if="onMic">
+        <ion-icon name="mic"></ion-icon>
+      </span>
+
+      <span ng-if="!onMic">
+        <ion-icon name="mic-off"></ion-icon>
+      </span>
+    </button >
+    
+  </ion-content>
+</ion-modal-view>
