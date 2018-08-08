@@ -1,2 +1,2 @@
 # totalvoice-exemplos
-Exemplos em diversas linguagens de como utilizar nossa api (Essas linguagens futuramente terão suas próprias library.. Aguarde!)
+Neste projeto você encontrará exemplos nas mais diversas linguagens utilizando os recursos da nossa plataforma, com casos de uso simples que podem te auxiliar durante o desenvolvimento.
