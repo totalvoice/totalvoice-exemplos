@@ -4,7 +4,7 @@ import json
 
 url = 'https://api2.totalvoice.com.br/sms'
 
-payload = {'numero_destino': '48996955411', 'mensagem':'Teste Hang'}
+payload = {'numero_destino': 'seu-numero-telefone', 'mensagem':'Teste Hang'}
 
 headers = {'content-type': 'application/json', 'Access-Token':'seu-token'}
 
