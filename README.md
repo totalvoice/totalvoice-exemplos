@@ -6,7 +6,7 @@
 >
 > Recomendamos a leitura da nossa documentação:
 >
-> - [Documentação da API](https://github.com/totalvoice/totalvoice-exemplos)
+> - [Documentação da API](https://totalvoice.github.io/totalvoice-docs/#introducao)
 > 
 > - [Playground](https://voice-app.zenvia.com/doc/)
 
